@@ -1,0 +1,4 @@
+/scripting/*
+!/scripting/l4d2_simple_ledge_disabler.sp
+!/scripting/compiled/
+.vscode
