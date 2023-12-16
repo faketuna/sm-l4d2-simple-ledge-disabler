@@ -33,6 +33,15 @@ public void OnCvarChanged(ConVar convar, const char[] oldValue, const char[] new
 
 public Action OnPlayerLedgeGrab(Handle event, char[] name, bool dontBroadcast) {
     if(!g_bLedgeEnabled) {
+        int client = GetClientOfUserId(GetEventInt(event, "userid", 0));
+        if(client == 0) {
+            return Plugin_Continue;
+        }
+        AcceptEntityInput(client, "DisableLedgeHang");
+        
+        SetEntProp(client, Prop_Send, "m_isIncapacitated", 0);
+        SetEntProp(client, Prop_Send, "m_isHangingFromLedge", 0);
+        SetEntProp(client, Prop_Send, "m_isFallingFromLedge", 0);
         return Plugin_Handled;
     }
     return Plugin_Continue;
