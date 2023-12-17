@@ -1,6 +1,8 @@
 # Simple ledge disabler
 
-Disable ledge with convar
+Created for who don't know hold space to avoid ledge.
+
+Disable ledge with convar.
 
 # ConVar
 
